@@ -9,11 +9,8 @@
   color: $dark-blue-text;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+  position: relative;
+  overflow: hidden;
 
   // Set position sticky so the jumbotron stays fixed while you scroll.
   // position: sticky;
@@ -37,14 +34,17 @@
     @include respond(tab-land) {
       font-size: 4rem;
     }
+
     @include respond(tab-port) {
       font-size: 3.6rem;
       text-align: center;
     }
+
     @include respond(phone) {
       font-size: 3.5rem;
       line-height: 1.5;
     }
+
     @include respond(phone-xs) {
       font-size: 2.8rem;
     }
@@ -63,6 +63,186 @@
       @include respond(phone) {
         font-size: 2rem;
       }
+    }
+  }
+
+  // Technology Icons Background
+  .tech-icons-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .tech-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    animation: float 12s infinite linear;
+
+    @include respond(phone) {
+      width: 40px;
+      height: 40px;
+    }
+
+    i {
+      font-size: 40px;
+      color: $secondary-color;
+
+      @include respond(phone) {
+        font-size: 28px;
+      }
+    }
+
+    // Individual positioning for each icon
+    &.tech-icon-1 {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    &.tech-icon-2 {
+      top: 20%;
+      left: 80%;
+      animation-delay: -2s;
+    }
+
+    &.tech-icon-3 {
+      top: 30%;
+      left: 15%;
+      animation-delay: -4s;
+    }
+
+    &.tech-icon-4 {
+      top: 40%;
+      left: 85%;
+      animation-delay: -6s;
+    }
+
+    &.tech-icon-5 {
+      top: 50%;
+      left: 5%;
+      animation-delay: -8s;
+    }
+
+    &.tech-icon-6 {
+      top: 60%;
+      left: 90%;
+      animation-delay: -10s;
+    }
+
+    &.tech-icon-7 {
+      top: 70%;
+      left: 20%;
+      animation-delay: -12s;
+    }
+
+    &.tech-icon-8 {
+      top: 80%;
+      left: 75%;
+      animation-delay: -14s;
+    }
+
+    &.tech-icon-9 {
+      top: 15%;
+      left: 50%;
+      animation-delay: -16s;
+    }
+
+    &.tech-icon-10 {
+      top: 25%;
+      left: 25%;
+      animation-delay: -18s;
+    }
+
+    &.tech-icon-11 {
+      top: 35%;
+      left: 70%;
+      animation-delay: -1s;
+    }
+
+    &.tech-icon-12 {
+      top: 45%;
+      left: 40%;
+      animation-delay: -3s;
+    }
+
+    &.tech-icon-13 {
+      top: 55%;
+      left: 60%;
+      animation-delay: -5s;
+    }
+
+    &.tech-icon-14 {
+      top: 65%;
+      left: 35%;
+      animation-delay: -7s;
+    }
+
+    &.tech-icon-15 {
+      top: 75%;
+      left: 55%;
+      animation-delay: -9s;
+    }
+
+    &.tech-icon-16 {
+      top: 85%;
+      left: 10%;
+      animation-delay: -11s;
+    }
+
+    &.tech-icon-17 {
+      top: 12%;
+      left: 65%;
+      animation-delay: -13s;
+    }
+
+    &.tech-icon-18 {
+      top: 22%;
+      left: 45%;
+      animation-delay: -15s;
+    }
+
+    &.tech-icon-19 {
+      top: 32%;
+      left: 30%;
+      animation-delay: -17s;
+    }
+
+    &.tech-icon-20 {
+      top: 42%;
+      left: 80%;
+      animation-delay: -19s;
+    }
+  }
+
+  .container {
+    z-index: 2;
+    position: relative;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+      transform: translateY(-10px) rotate(120deg);
+    }
+
+    66% {
+      transform: translateY(10px) rotate(240deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotate(360deg);
     }
   }
 }

@@ -6,7 +6,7 @@
   font-weight: bold;
   line-height: 1;
   z-index: 1;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
 
   &::after {
     content: "";
@@ -17,7 +17,7 @@
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
   }
 
   // Disabled state
@@ -106,6 +106,27 @@
 
     &::after {
       width: 100%;
+    }
+  }
+
+  /* Inverted Resume Style */
+  &.cta-btn--inverted {
+    color: $secondary-color;
+    background: $white-color;
+
+    &::after {
+      background: transparent;
+      width: 100%;
+    }
+
+    &:hover {
+      color: $white-color;
+      background: transparent;
+      text-decoration: none;
+
+      &::after {
+        width: 0%;
+      }
     }
   }
 }
