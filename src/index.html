@@ -39,6 +39,16 @@
 <body>
   <div id="top"></div>
 
+  <!-- **** Navigation Header **** -->
+  <header class="navbar">
+    <nav class="navbar__container">
+      <a href="#about" class="navbar__link">About Me</a>
+      <a href="#projects" class="navbar__link">Projects</a>
+      <a href="#contact" class="navbar__link">Contact</a>
+    </nav>
+  </header>
+  <!-- /END Navigation Header -->
+
   <!-- **** Hero Section **** -->
   <section id="hero" class="jumbotron">
     <!-- Technology Icons Background -->
@@ -226,8 +236,13 @@
         </div>
         <!-- /END Project -->
 
+        <!-- See More Button (after first 2 projects) -->
+        <div class="project-toggle-wrapper">
+          <button type="button" id="see-more-btn" class="cta-btn cta-btn--hero project-toggle-btn">See More</button>
+        </div>
+
         <!-- Notice: each .row is a project -->
-        <div class="row">
+        <div class="row project-hidden">
           <div class="col-lg-4 col-sm-12 order-lg-1 order-2">
             <div class="project-wrapper__text load-hidden">
               <h3 class="project-wrapper__text-title">Zen</h3>
@@ -262,7 +277,7 @@
 
         <!-- /END Project -->
         <!-- Notice: each .row is a project -->
-        <div class="row">
+        <div class="row project-hidden">
           <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
             <div class="project-wrapper__image load-hidden">
               <a rel="noreferrer" href="https://zentrafinance.vercel.app/" target="_blank">
@@ -297,7 +312,7 @@
         <!-- /END Project -->
 
         <!-- Notice: each .row is a project -->
-        <div class="row">
+        <div class="row project-hidden">
           <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
             <div class="project-wrapper__text load-hidden">
               <h3 class="project-wrapper__text-title">Pdf editor</h3>
@@ -330,7 +345,7 @@
         </div>
         <!-- /END Project -->
         <!-- Notice: each .row is a project -->
-        <div class="row">
+        <div class="row project-hidden">
           <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
             <div class="project-wrapper__image load-hidden">
               <a rel="noreferrer" href="https://manziltracker.vercel.app/" target="_blank">
@@ -365,7 +380,7 @@
         <!-- /END Project -->
 
         <!-- Notice: each .row is a project -->
-        <div class="row">
+        <div class="row project-hidden">
           <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
             <div class="project-wrapper__text load-hidden">
               <h3 class="project-wrapper__text-title">School Management System</h3>
@@ -397,6 +412,11 @@
           </div>
         </div>
         <!-- /END Project -->
+
+        <!-- See Less Button (below all projects) -->
+        <div class="project-toggle-wrapper" id="see-less-wrapper" style="display: none;">
+          <button type="button" id="see-less-btn" class="cta-btn cta-btn--hero project-toggle-btn">See Less</button>
+        </div>
       </div>
     </div>
   </section>
@@ -450,6 +470,10 @@
   <script defer type="module" src="index.js"></script>
 
   <script>
+    // Projects are hidden via CSS class, no need for inline styles
+  </script>
+
+  <script>
     function copyEmail() {
       const email = 'harshitsharmaclg@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
@@ -488,10 +512,8 @@
           const target = document.querySelector(href);
 
           if (target) {
-            // For "Know more" button, add offset to account for any fixed headers
-            const offset = href === '#about' ? 80 : 0;
             const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            const offsetPosition = elementPosition + window.pageYOffset;
 
             window.scrollTo({
               top: offsetPosition,
@@ -500,6 +522,67 @@
           }
         });
       });
+
+      // Handle See More/Less toggle for projects
+      function initProjectToggle() {
+        const seeMoreBtn = document.getElementById('see-more-btn');
+        const seeLessBtn = document.getElementById('see-less-btn');
+        const hiddenProjects = document.querySelectorAll('.project-hidden');
+
+        console.log('Initializing project toggle:', {
+          seeMoreBtn: !!seeMoreBtn,
+          seeLessBtn: !!seeLessBtn,
+          hiddenProjectsCount: hiddenProjects.length
+        });
+
+        if (!seeMoreBtn || !seeLessBtn || hiddenProjects.length === 0) {
+          console.error('Project toggle elements not found!');
+          return;
+        }
+
+        // Projects are already hidden via CSS class
+        console.log(`Found ${hiddenProjects.length} hidden projects`);
+
+        seeMoreBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('See More clicked! Showing projects...');
+          hiddenProjects.forEach((project, index) => {
+            // Add show-projects class (keep project-hidden for identification)
+            project.classList.add('show-projects');
+            // Force display via inline style as well to override any responsive CSS
+            project.style.setProperty('display', 'flex', 'important');
+            console.log(`Showing project ${index + 1}:`, project.className, 'Display:', window.getComputedStyle(project).display);
+          });
+          seeMoreBtn.parentElement.style.display = 'none';
+          document.getElementById('see-less-wrapper').style.display = 'block';
+        });
+
+        seeLessBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('See Less clicked! Hiding projects...');
+          hiddenProjects.forEach(project => {
+            // Remove show-projects class to hide
+            project.classList.remove('show-projects');
+            // Force hide via inline style
+            project.style.setProperty('display', 'none', 'important');
+          });
+          document.getElementById('see-less-wrapper').style.display = 'none';
+          seeMoreBtn.parentElement.style.display = 'block';
+          
+          // Scroll to projects section when collapsing
+          setTimeout(() => {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+              projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        });
+      }
+
+      // Initialize project toggle
+      initProjectToggle();
     });
   </script>
 </body>
