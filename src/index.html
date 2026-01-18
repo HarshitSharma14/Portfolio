@@ -563,6 +563,7 @@
 
           // Open drawer
           drawer.classList.add('drawer-open');
+          drawer.closest('.project-wrapper')?.classList.add('drawer-expanded');
           seeMoreBtn.parentElement.style.display = 'none';
           seeLessWrapper.style.display = 'block';
 
@@ -578,6 +579,7 @@
 
           // Close drawer
           drawer.classList.remove('drawer-open');
+          drawer.closest('.project-wrapper')?.classList.remove('drawer-expanded');
           seeLessWrapper.style.display = 'none';
           seeMoreBtn.parentElement.style.display = 'block';
 
