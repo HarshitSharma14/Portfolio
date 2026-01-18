@@ -142,16 +142,23 @@
         <div class="col-md-6 col-sm-12">
           <div class="about-wrapper__info load-hidden">
             <p class="about-wrapper__info-text">
-              Hey, I’m Harshit Sharma — a curious mind with a keyboard and a love for all things tech. I enjoy crafting
-              sleek interfaces, building cool web apps, and making digital experiences smoother, faster, and more
-              intuitive.
+              Hi, I’m Harshit Sharma — a software engineering student interested in applied AI and backend systems. I
+              like working on
+              problems that involve real data, solid architecture, and systems that are built to last.
             </p>
             <p class="about-wrapper__info-text">
-              When I’m not coding, I’m either learning something new, debugging life, or staying up way too late
-              watching Suits and pretending I'm Harvey Specter with a compiler.
+              I mostly work on backend-heavy applications, database design, and integrating AI into practical use cases.
+              I enjoy
+              understanding how systems work end to end and improving them for reliability, performance, and scale.
+            </p>
+            <p class="about-wrapper__info-text">
+              Outside of coding, I’m usually learning something new or watching Suits during late nights, with the
+              compiler open on
+              the side.
             </p>
             <span class="d-flex mt-3">
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="https://drive.google.com/drive/folders/1P2xEzc7BOnTTFyiv1EnC_zD1iqXHZwB5?usp=sharing">
+              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume"
+                href="https://drive.google.com/drive/folders/1P2xEzc7BOnTTFyiv1EnC_zD1iqXHZwB5?usp=sharing">
                 View Resume
               </a>
             </span>
@@ -236,177 +243,193 @@
         </div>
         <!-- /END Project -->
 
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12 order-lg-1 order-2">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Zen</h3>
-              <div>
-                <p class="mb-4">
-                  A focus tracking desktop app that gamifies productivity through social features. Built with Electron
-                  and React, Zen monitors work sessions in real-time, detects distractions, and enables multiplayer
-                  study sessions with shared break lobbies. Users can compete in Study Marathons with live scoring
-                  powered by Socket.io, making productivity both measurable and fun.
-                </p>
-              </div>
-              <a rel="noreferrer" class="cta-btn cta-btn--hero disabled" href="javascript:void(0)">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://github.com/HarshitSharma14/Zen">
-                Source Code
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12 order-lg-2 order-1">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="#!" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/zen/1.png" />
-                </div>
-              </a>
-            </div>
-          </div>
+        <!-- See More Button (after first 2 projects) -->
+        <div class="project-toggle-wrapper">
+          <button type="button" id="see-more-btn" class="cta-btn cta-btn--hero project-toggle-btn">See More</button>
         </div>
 
-        <!-- /END Project -->
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://zentrafinance.vercel.app/" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/zentra/1.png" />
+        <!-- Projects Drawer (contains projects 3-7) -->
+        <div id="projects-drawer" class="projects-drawer">
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12 order-lg-1 order-2">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Zen</h3>
+                <div>
+                  <p class="mb-4">
+                    A focus tracking desktop app that gamifies productivity through social features. Built with Electron
+                    and React, Zen monitors work sessions in real-time, detects distractions, and enables multiplayer
+                    study sessions with shared break lobbies. Users can compete in Study Marathons with live scoring
+                    powered by Socket.io, making productivity both measurable and fun.
+                  </p>
                 </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-12 order-lg-2 order-2">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Zentra</h3>
-              <div>
-                <p class="mb-4">
-                  A modern, comprehensive personal finance tracking application built with Next.js, offering real-time
-                  transaction management, intelligent budgeting, and insightful analytics. No login required - start
-                  tracking your finances instantly with localStorage-based user management.
-                </p>
+                <a rel="noreferrer" class="cta-btn cta-btn--hero disabled" href="javascript:void(0)">
+                  See Live
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/HarshitSharma14/Zen">
+                  Source Code
+                </a>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://zentrafinance.vercel.app/">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://github.com/HarshitSharma14/zentra">
-                Source Code
-              </a>
+            </div>
+            <div class="col-lg-8 col-sm-12 order-lg-2 order-1">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt">
+                    <img alt="Project Image" class="img-fluid" src="assets/zen/1.png" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- /END Project -->
 
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Pdf editor</h3>
-              <div>
-                <p class="mb-4">
-                  A powerful, pixel-perfect web-based PDF editing tool built with Next.js, JavaScript, offering
-                  professional-grade editing capabilities with What You See Is What You Get (WYSIWYG) precision.
-                  Experience seamless PDF manipulation with advanced blur, erase, and text editing features.
-                </p>
+          <!-- /END Project -->
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="https://zentrafinance.vercel.app/" target="_blank">
+                  <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt">
+                    <img alt="Project Image" class="img-fluid" src="assets/zentra/1.png" />
+                  </div>
+                </a>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://pdfeditorpro.vercel.app/">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://github.com/HarshitSharma14/Pdf-editor">
-                Source Code
-              </a>
             </div>
-          </div>
-          <div class="col-lg-7 col-sm-12 order-lg-2 order-1">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://pdfeditorpro.vercel.app/" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/pdf-editor/1.png" />
+            <div class="col-lg-4 col-sm-12 order-lg-2 order-2">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Zentra</h3>
+                <div>
+                  <p class="mb-4">
+                    A modern, comprehensive personal finance tracking application built with Next.js, offering real-time
+                    transaction management, intelligent budgeting, and insightful analytics. No login required - start
+                    tracking your finances instantly with localStorage-based user management.
+                  </p>
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://manziltracker.vercel.app/" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/manzilTracker/1.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-12 order-lg-2 order-2">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Manzil Tracker</h3>
-              <div>
-                <p class="mb-4">
-                  About
-                  A beautiful, modern frontend showcase featuring a unique 3-level interactive website with stunning
-                  animations and UI design built with Next.js, TypeScript, Material-UI, and Framer Motion .
-                </p>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://zentrafinance.vercel.app/">
+                  See Live
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/HarshitSharma14/zentra">
+                  Source Code
+                </a>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://manziltracker.vercel.app/">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://github.com/HarshitSharma14/ManzilTracker">
-                Source Code
-              </a>
             </div>
           </div>
-        </div>
-        <!-- /END Project -->
+          <!-- /END Project -->
 
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">School Management System</h3>
-              <div>
-                <p class="mb-4">
-                  A REST API for managing schools with location-based proximity sorting. Built with Node.js, Express.js,
-                  and TiDB Cloud MySQL.
-                </p>
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Pdf editor</h3>
+                <div>
+                  <p class="mb-4">
+                    A powerful, pixel-perfect web-based PDF editing tool built with Next.js, JavaScript, offering
+                    professional-grade editing capabilities with What You See Is What You Get (WYSIWYG) precision.
+                    Experience seamless PDF manipulation with advanced blur, erase, and text editing features.
+                  </p>
+                </div>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://pdfeditorpro.vercel.app/">
+                  See Live
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/HarshitSharma14/Pdf-editor">
+                  Source Code
+                </a>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://school-management-api-delta-lime.vercel.app/">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://github.com/HarshitSharma14/school-management-api">
-                Source Code
-              </a>
+            </div>
+            <div class="col-lg-7 col-sm-12 order-lg-2 order-1">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="https://pdfeditorpro.vercel.app/" target="_blank">
+                  <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt">
+                    <img alt="Project Image" class="img-fluid" src="assets/pdf-editor/1.png" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="col-lg-8 col-sm-12 order-lg-2 order-1">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://school-management-api-delta-lime.vercel.app/" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/schoolApi/1.png" />
-                </div>
-              </a>
+          <!-- /END Project -->
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-8 col-sm-12 order-lg-1 order-1">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="https://manziltracker.vercel.app/" target="_blank">
+                  <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt">
+                    <img alt="Project Image" class="img-fluid" src="assets/manzilTracker/1.png" />
+                  </div>
+                </a>
+              </div>
             </div>
+            <div class="col-lg-4 col-sm-12 order-lg-2 order-2">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Manzil Tracker</h3>
+                <div>
+                  <p class="mb-4">
+                    About
+                    A beautiful, modern frontend showcase featuring a unique 3-level interactive website with stunning
+                    animations and UI design built with Next.js, TypeScript, Material-UI, and Framer Motion .
+                  </p>
+                </div>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://manziltracker.vercel.app/">
+                  See Live
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/HarshitSharma14/ManzilTracker">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-6 order-lg-1 order-2">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">School Management System</h3>
+                <div>
+                  <p class="mb-4">
+                    A REST API for managing schools with location-based proximity sorting. Built with Node.js,
+                    Express.js,
+                    and TiDB Cloud MySQL.
+                  </p>
+                </div>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://school-management-api-delta-lime.vercel.app/">
+                  See Live
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/HarshitSharma14/school-management-api">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12 order-lg-2 order-1">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="https://school-management-api-delta-lime.vercel.app/" target="_blank">
+                  <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt">
+                    <img alt="Project Image" class="img-fluid" src="assets/schoolApi/1.png" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- See Less Button (at the end of drawer) -->
+          <div class="project-toggle-wrapper" id="see-less-wrapper" style="display: none;">
+            <button type="button" id="see-less-btn" class="cta-btn cta-btn--hero project-toggle-btn">See Less</button>
           </div>
         </div>
-        <!-- /END Project -->
+        <!-- /END Projects Drawer -->
       </div>
     </div>
   </section>
@@ -439,11 +462,21 @@
       </a>
       <div class="social-links">
 
-        <a rel="noreferrer" href="https://www.linkedin.com/in/harshitsharma14" target="_blank">
+        <a rel="noreferrer" href="https://www.linkedin.com/in/harshitsharma14" target="_blank" class="social-link"
+          data-tooltip="LinkedIn">
           <i class="fa fa-linkedin fa-inverse"></i>
         </a>
-        <a rel="noreferrer" href="https://github.com/HarshitSharma14" target="_blank">
+        <a rel="noreferrer" href="https://github.com/HarshitSharma14" target="_blank" class="social-link"
+          data-tooltip="GitHub">
           <i class="fa fa-github fa-inverse"></i>
+        </a>
+        <a rel="noreferrer" href="https://codeforces.com/profile/harshitsharma14" target="_blank" class="social-link"
+          data-tooltip="Codeforces">
+          <img src="assets/codeforces.svg" alt="Codeforces" class="social-logo">
+        </a>
+        <a rel="noreferrer" href="https://leetcode.com/u/harshit1405/" target="_blank" class="social-link"
+          data-tooltip="LeetCode">
+          <img src="assets/leetcode.svg" alt="LeetCode" class="social-logo">
         </a>
       </div>
 
@@ -513,6 +546,53 @@
         });
       });
 
+      // Handle Projects Drawer functionality
+      function initProjectsDrawer() {
+        const seeMoreBtn = document.getElementById('see-more-btn');
+        const seeLessBtn = document.getElementById('see-less-btn');
+        const drawer = document.getElementById('projects-drawer');
+        const seeLessWrapper = document.getElementById('see-less-wrapper');
+
+        if (!seeMoreBtn || !seeLessBtn || !drawer || !seeLessWrapper) {
+          return;
+        }
+
+        seeMoreBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Open drawer
+          drawer.classList.add('drawer-open');
+          seeMoreBtn.parentElement.style.display = 'none';
+          seeLessWrapper.style.display = 'block';
+
+          // Smooth scroll to drawer after a short delay
+          setTimeout(() => {
+            drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        });
+
+        seeLessBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Close drawer
+          drawer.classList.remove('drawer-open');
+          seeLessWrapper.style.display = 'none';
+          seeMoreBtn.parentElement.style.display = 'block';
+
+          // Scroll back to projects section
+          setTimeout(() => {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+              projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 300);
+        });
+      }
+
+      // Initialize drawer
+      initProjectsDrawer();
     });
   </script>
 </body>
